@@ -1,0 +1,36 @@
+Main Branch - clone
+--------------------
+   * gitclone(url)
+
+You will check which branch?
+---------------------------
+   * git branch 
+    you will see all the branches you change feature branch or any other branch
+   * git checkout (your working branch name)
+   * git branch feature
+    new branch create using this comment
+
+Code pushing comments
+---------------------
+  *  git init
+    first of all you add (git init) initialized, this is one time only or new repo creation using this comment after don't follow this comment
+  *  git status
+    you will see now working folder and files showing please check all code correct
+    git add particular file only mean (your file)
+  *  git add .
+    . means all files savings
+  *  git status
+    Again check all code saved
+  *  git commit -m "first commit"
+  *  git push
+    Git push not working means using this comment this also one time only add after git push working fine.
+  *  git remote add <name> <url>
+    this command first time pushing only use name means alias name & your GitHub URL
+  *  git push --set-upstream sbi developer
+    Once GitHub URL added using this command git push --set-upstream (alias) (your branch name)
+
+
+Watch this video to better understand - https://www.youtube.com/watch?v=qb5DSakkW8Y
+
+If any doubt please ask me will explain
+

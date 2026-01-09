@@ -1,0 +1,23 @@
+What is ec2:
+“EC2 (Elastic Compute Cloud) AWS used to run applications virtual servers in the cloud. You can choose instance types, operating systems, storage, and networking, and pay-as-you-go pricing model.
+
+VPC:
+A VPC is a private network in AWS where we deploy our resources. In my projects, I usually create a dedicated VPC for each environment (dev, staging, prod).
+Public subnet → Internet access (through IGW)
+Private subnet → no direct Internet access, used for like databases.
+IGW->An Internet Gateway connects the VPC to the Internet. Without IGW, resources in VPC cannot communicate with the Internet.
+RT->Route tables decide where network traffic should go. I configure default routes for public subnets to IGW, and private subnets to NAT Gateway.
+SG->Security Groups firewalls instance level. I usually allow only required ports, for example, specific ports used by our applications developers.
+NG->NAT Gateway instances allow in a private subnet to the Internet access.
+Elastic IP->An Elastic IP is a static public IPv4 address in AWS that can be attached to resources like EC2 or NAT Gateway.
+
+ALB:
+ALB->In my projects, we use ALB to handle web application traffic. For example
+I have deploy EC2 instances in multiple Availability Zones for high availability.
+The ALB sits in frontend receives all the client requests (on HTTP/HTTPS).
+then routes the traffic to healthy EC2 instances using target groups.
+ALB supports path-based and host-based routing. For example,
+/api/* → goes to backend service target group
+/images/* → goes to image service target group
+Health checks are configured, so if one EC2 instance is unhealthy, traffic is automatically sent to healthy instances.
+We also integrate SSL certificates with ALB to provide HTTPS.
